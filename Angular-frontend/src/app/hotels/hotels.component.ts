@@ -11,6 +11,7 @@ import { Hotel } from '../models/hotel';
 export class HotelsComponent implements OnInit {
   hotels: Hotel[];
   selectedHotelName = '';
+  selectedHotelCity = '';
   loading = true;
   error: any;
 
@@ -64,10 +65,35 @@ export class HotelsComponent implements OnInit {
       }
     })
       .subscribe(({data, loading}) => {
-          console.log('Selected name', this.selectedHotelName);
-          console.log(data.getHotelByName);
-          console.log(this.loading);
           this.hotels = data.getHotelByName;
+          this.loading = loading;
+        },
+        error => {
+          this.loading = false;
+          this.error = error;
+        }
+      );
+  }
+
+  searchByCity(): void{
+    this.apollo.query<any>({
+      query: gql`
+        query ($city:String!){
+          getHotelByCity(city:$city){
+            id,
+            hotel_id,
+            hotel_name,
+            street,
+            city,
+            price
+          }
+        }`,
+      variables: {
+        city: this.selectedHotelCity
+      }
+    })
+      .subscribe(({data, loading}) => {
+          this.hotels = data.getHotelByCity;
           this.loading = loading;
         },
         error => {
