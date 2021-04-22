@@ -7,6 +7,16 @@
   Error
 </div>
 
+<form class="row g-3">
+  <div class="col-auto">
+    <label for="txtSearch" class="visually-hidden">Search Hotel By Name: </label>
+    <input type="text" [(ngModel)]="selectedHotelName" name="txtSearch" class="form-control" id="txtSearch" placeholder="Search By Name">
+  </div>
+  <div class="col-auto">
+    <button type="submit" class="btn btn-primary mb-3" (click)="searchByName()">Search</button>
+  </div>
+</form>
+
 <table class="table">
   <thead>
   <tr>

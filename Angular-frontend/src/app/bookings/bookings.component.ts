@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Apollo } from 'apollo-angular';
-import gql from 'graphql-tag';
+import { Apollo, gql } from 'apollo-angular';
+import { Booking } from '../models/booking';
 
 @Component({
   selector: 'app-bookings',
@@ -8,7 +8,7 @@ import gql from 'graphql-tag';
   styleUrls: ['./bookings.component.css']
 })
 export class BookingsComponent implements OnInit {
-  bookings: any[];
+  bookings: Booking[];
   loading = true;
   error: any;
 

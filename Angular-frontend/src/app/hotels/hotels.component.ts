@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Apollo } from 'apollo-angular';
-import gql from 'graphql-tag';
+import { Apollo, gql } from 'apollo-angular';
+import { Hotel } from '../models/hotel';
 
 @Component({
   selector: 'app-hotels',
@@ -9,7 +9,8 @@ import gql from 'graphql-tag';
 })
 
 export class HotelsComponent implements OnInit {
-  hotels: any[];
+  hotels: Hotel[];
+  selectedHotelName = '';
   loading = true;
   error: any;
 
@@ -36,6 +37,37 @@ export class HotelsComponent implements OnInit {
       .subscribe(
         ({ data, loading }) => {
           this.hotels = data.getHotel;
+          this.loading = loading;
+        },
+        error => {
+          this.loading = false;
+          this.error = error;
+        }
+      );
+  }
+
+  searchByName(): void{
+    this.apollo.query<any>({
+      query: gql`
+        query ($hotel_name:String!){
+          getHotelByName(hotel_name:$hotel_name){
+            id,
+            hotel_id,
+            hotel_name,
+            street,
+            city,
+            price
+          }
+        }`,
+      variables: {
+        hotel_name: this.selectedHotelName
+      }
+    })
+      .subscribe(({data, loading}) => {
+          console.log('Selected name', this.selectedHotelName);
+          console.log(data.getHotelByName);
+          console.log(this.loading);
+          this.hotels = data.getHotelByName;
           this.loading = loading;
         },
         error => {
