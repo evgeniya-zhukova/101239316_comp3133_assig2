@@ -3,17 +3,31 @@
 <div *ngIf="loading">
   Loading...
 </div>
+<div *ngIf="error">
+  Error
+</div>
 
 <table class="table">
   <thead>
   <tr>
-    <th scope="col">Title</th>
-    <th scope="col">Hotels</th>
+    <th scope="col">hotel_id</th>
+    <th scope="col">hotel_name</th>
+    <th scope="col">street</th>
+    <th scope="col">city</th>
+    <th scope="col">postal_code</th>
+    <th scope="col">price</th>
+    <th scope="col">email</th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let hotel of hotels">
+    <th scope="row">{{ hotel.hotel_id }}</th>
+    <th scope="row">{{ hotel.hotel_name }}</th>
+    <th scope="row">{{ hotel.street }}</th>
     <th scope="row">{{ hotel.city }}</th>
+    <th scope="row">{{ hotel.postal_code }}</th>
+    <th scope="row">{{ hotel.price }}</th>
+    <th scope="row">{{ hotel.email }}</th>
   </tr>
   </tbody>
 </table>

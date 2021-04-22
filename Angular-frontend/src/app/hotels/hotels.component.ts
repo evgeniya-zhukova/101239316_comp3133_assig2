@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
-import { Hotel } from '../models/hotel';
 
 @Component({
   selector: 'app-hotels',
@@ -10,15 +9,13 @@ import { Hotel } from '../models/hotel';
 })
 
 export class HotelsComponent implements OnInit {
-
-  hotels: Hotel[];
+  hotels: any[];
   loading = true;
   error: any;
 
   constructor(private apollo: Apollo) { }
 
   ngOnInit(): void {
-
     this.apollo
       .query<any>({
         query: gql`
@@ -38,12 +35,13 @@ export class HotelsComponent implements OnInit {
       })
       .subscribe(
         ({ data, loading }) => {
-          console.log('data: ', data);
           this.hotels = data.getHotel;
           this.loading = loading;
+        },
+        error => {
+          this.loading = false;
+          this.error = error;
         }
       );
-
   }
-
 }

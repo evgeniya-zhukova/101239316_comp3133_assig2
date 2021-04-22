@@ -1,1 +1,29 @@
-<p>bookings works!</p>
+<p>Bookings Hotels</p>
+
+<div *ngIf="loading">
+  Loading...
+</div>
+<div *ngIf="error">
+  Error
+</div>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Hotels ID</th>
+    <th scope="col">Booking Date</th>
+    <th scope="col">Booking Start</th>
+    <th scope="col">Booking End</th>
+    <th scope="col">User ID</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let booking of bookings">
+    <th scope="row">{{ booking.hotel_id }}</th>
+    <th scope="row">{{ booking.booking_date }}</th>
+    <th scope="row">{{ booking.booking_start }}</th>
+    <th scope="row">{{ booking.booking_end }}</th>
+    <th scope="row">{{ booking.user_id }}</th>
+  </tr>
+  </tbody>
+</table>
