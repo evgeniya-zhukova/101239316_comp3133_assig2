@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { BookingsComponent } from './bookings/bookings.component';
 import { GraphQLModule } from './graphql.module';
 import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     GraphQLModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
