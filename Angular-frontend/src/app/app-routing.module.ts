@@ -4,11 +4,13 @@ import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { HotelsComponent } from './hotels/hotels.component';
 import { BookingsComponent } from './bookings/bookings.component';
+import { CanActivate } from '@angular/router';
+import { AuthGuardService as AuthGuard } from './auth/auth-guard.service';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'hotels', component: HotelsComponent },
+  { path: 'hotels', component: HotelsComponent, canActivate: [AuthGuard] },
   { path: 'bookings', component: BookingsComponent },
   { path: 'sign-up', component: SignUpComponent }
 ];

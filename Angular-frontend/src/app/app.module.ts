@@ -9,7 +9,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { LoginComponent } from './login/login.component';
 import { BookingsComponent } from './bookings/bookings.component';
 import { GraphQLModule } from './graphql.module';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [

@@ -70,6 +70,7 @@ export class SignUpComponent implements OnInit {
       const newUsers = Object.assign([], this.users);
       newUsers.unshift(data['addUser']);
       this.users = newUsers;
+      alert('You are successfully registered!');
     });
   }
 }
