@@ -1,4 +1,4 @@
-<p>Bookings Hotels</p>
+<h2 class="text-center">Bookings Hotels</h2>
 
 <div *ngIf="loading">
   Loading...
@@ -7,7 +7,9 @@
   Error
 </div>
 
-<table class="table">
+<div class="card">
+  <div class="card-body">
+    <table class="table">
   <thead>
   <tr>
     <th scope="col">Hotels ID</th>
@@ -19,11 +21,13 @@
   </thead>
   <tbody>
   <tr *ngFor="let booking of bookings">
-    <th scope="row">{{ booking.hotel_id }}</th>
-    <th scope="row">{{ booking.booking_date }}</th>
-    <th scope="row">{{ booking.booking_start }}</th>
-    <th scope="row">{{ booking.booking_end }}</th>
-    <th scope="row">{{ booking.user_id }}</th>
+    <td scope="row">{{ booking.hotel_id }}</td>
+    <td scope="row">{{ booking.booking_date }}</td>
+    <td scope="row">{{ booking.booking_start }}</td>
+    <td scope="row">{{ booking.booking_end }}</td>
+    <td scope="row">{{ booking.user_id }}</td>
   </tr>
   </tbody>
 </table>
+  </div>
+</div>

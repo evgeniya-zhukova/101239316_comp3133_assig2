@@ -1,4 +1,4 @@
-<p>Hotels</p>
+<h2 class="text-center">Hotels</h2>
 
 <div *ngIf="loading">
   Loading...
@@ -7,47 +7,63 @@
   Error
 </div>
 
-<form class="row g-3">
-  <div class="col-auto">
-    <label for="txtSearchName" class="visually-hidden">Search Hotel By Name: </label>
+<div class="row">
+<div class="col-6">
+<form>
+  <div class="col-7">
+    <label for="txtSearchName">Search Hotel By Name: </label>
     <input type="text" [(ngModel)]="selectedHotelName" name="txtSearch" class="form-control" id="txtSearchName" placeholder="Search By Name">
   </div>
-  <div class="col-auto">
+  <br>
+  <div class="col-4">
     <button type="submit" class="btn btn-primary mb-3" (click)="searchByName()">Search</button>
   </div>
 </form>
+<br><br>
+</div>
 
-<form class="row g-3">
-  <div class="col-auto">
-    <label for="txtSearchCity" class="visually-hidden">Search Hotel By City: </label>
+<div class="col-6">
+<form>
+  <div class="col-7">
+    <label for="txtSearchCity">Search Hotel By City: </label>
     <input type="text" [(ngModel)]="selectedHotelCity" name="txtSearch" class="form-control" id="txtSearchCity" placeholder="Search By City">
   </div>
-  <div class="col-auto">
+  <br>
+  <div class="col-4">
     <button type="submit" class="btn btn-primary mb-3" (click)="searchByCity()">Search</button>
   </div>
 </form>
+<br><br>
+</div>
+</div>
 
+<div class="card">
+  <div class="card-body">
 <table class="table">
   <thead>
   <tr>
-    <th scope="col">hotel_id</th>
-    <th scope="col">hotel_name</th>
-    <th scope="col">street</th>
-    <th scope="col">city</th>
-    <th scope="col">postal_code</th>
-    <th scope="col">price</th>
-    <th scope="col">email</th>
+    <th scope="col">Hotel #</th>
+    <th scope="col">Hotel Name</th>
+    <th scope="col">Street</th>
+    <th scope="col">City</th>
+    <th scope="col">Postal Code</th>
+    <th scope="col">Price</th>
+    <th scope="col">Email</th>
+    <th scope="col">Booking</th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let hotel of hotels">
-    <th scope="row">{{ hotel.hotel_id }}</th>
-    <th scope="row">{{ hotel.hotel_name }}</th>
-    <th scope="row">{{ hotel.street }}</th>
-    <th scope="row">{{ hotel.city }}</th>
-    <th scope="row">{{ hotel.postal_code }}</th>
-    <th scope="row">{{ hotel.price }}</th>
-    <th scope="row">{{ hotel.email }}</th>
+    <td scope="row">{{ hotel.hotel_id }}</td>
+    <td scope="row">{{ hotel.hotel_name }}</td>
+    <td scope="row">{{ hotel.street }}</td>
+    <td scope="row">{{ hotel.city }}</td>
+    <td scope="row">{{ hotel.postal_code }}</td>
+    <td scope="row">{{ hotel.price }}</td>
+    <td scope="row">{{ hotel.email }}</td>
+    <td scope="row"><button class="btn btn-success" onClick={this.addBooking}>Book</button></td>
   </tr>
   </tbody>
 </table>
+</div>
+</div>
