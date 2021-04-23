@@ -41,6 +41,7 @@ exports.typeDefs = gql `
      getHotelByCity(city: String!): [Hotel]
      getUser: [User]
      getUserByID(id: ID!): User
+     getUserByUsernameAndPassword(username: String!, password: String!): [User]
    }
 
    type Mutation {

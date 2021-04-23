@@ -46,6 +46,9 @@ exports.resolvers = {
         getUserByID: async (parent, args) => {
             return await User.findById(args.id);
         },
+        getUserByUsernameAndPassword: async (parent, args) => {
+            return await User.find({"username" : args.username, "password" : args.password});
+        },
     },
     Mutation: {
         addBookHotel: async (parent, args) => {
