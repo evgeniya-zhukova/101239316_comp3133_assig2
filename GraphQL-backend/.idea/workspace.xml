@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da136bbf-bff9-45ca-824b-c109c12e6eb4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Angular-frontend/src/app/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular-frontend/src/app/login/login.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular-frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular-frontend/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular-frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular-frontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular-frontend/src/app/bookings/bookings.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular-frontend/src/app/bookings/bookings.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular-frontend/src/app/bookings/bookings.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular-frontend/src/app/bookings/bookings.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular-frontend/src/app/hotels/hotels.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular-frontend/src/app/hotels/hotels.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular-frontend/src/app/hotels/hotels.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular-frontend/src/app/hotels/hotels.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Angular-frontend/src/app/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular-frontend/src/app/login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular-frontend/src/app/sign-up/sign-up.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular-frontend/src/app/sign-up/sign-up.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular-frontend/src/app/sign-up/sign-up.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular-frontend/src/app/sign-up/sign-up.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resolvers.js" beforeDir="false" afterPath="$PROJECT_DIR$/resolvers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/schema.js" beforeDir="false" afterPath="$PROJECT_DIR$/schema.js" afterDir="false" />
@@ -38,7 +45,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1619075887141</updated>
-      <workItem from="1619075888452" duration="4944000" />
+      <workItem from="1619075888452" duration="5592000" />
     </task>
     <servers />
   </component>

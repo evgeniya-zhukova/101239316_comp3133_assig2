@@ -1,4 +1,4 @@
-<h2 class="text-center">Bookings Hotels</h2>
+<h2 class="text-center">Booking Hotels</h2>
 
 <div *ngIf="loading">
   Loading...
@@ -12,11 +12,10 @@
     <table class="table">
   <thead>
   <tr>
-    <th scope="col">Hotels ID</th>
+    <th scope="col">Hotel #</th>
     <th scope="col">Booking Date</th>
     <th scope="col">Booking Start</th>
     <th scope="col">Booking End</th>
-    <th scope="col">User ID</th>
   </tr>
   </thead>
   <tbody>
@@ -25,7 +24,6 @@
     <td scope="row">{{ booking.booking_date }}</td>
     <td scope="row">{{ booking.booking_start }}</td>
     <td scope="row">{{ booking.booking_end }}</td>
-    <td scope="row">{{ booking.user_id }}</td>
   </tr>
   </tbody>
 </table>

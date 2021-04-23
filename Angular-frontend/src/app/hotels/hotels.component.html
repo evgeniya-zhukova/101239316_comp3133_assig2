@@ -54,14 +54,14 @@
   </thead>
   <tbody>
   <tr *ngFor="let hotel of hotels">
-    <td scope="row">{{ hotel.hotel_id }}</td>
+    <td [(ngModel)]="hotel_id" scope="row">{{ hotel.hotel_id }}</td>
     <td scope="row">{{ hotel.hotel_name }}</td>
     <td scope="row">{{ hotel.street }}</td>
     <td scope="row">{{ hotel.city }}</td>
     <td scope="row">{{ hotel.postal_code }}</td>
     <td scope="row">{{ hotel.price }}</td>
     <td scope="row">{{ hotel.email }}</td>
-    <td scope="row"><button class="btn btn-success" onClick={this.addBooking}>Book</button></td>
+    <td scope="row"><button class="btn btn-success" (click)="addBooking()">Book</button></td>
   </tr>
   </tbody>
 </table>

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Apollo, gql } from 'apollo-angular';
 import { Router } from '@angular/router';
 import {User} from '../models/user';
-import {Hotel} from '../models/hotel';
 
 @Component({
   selector: 'app-login',
@@ -38,7 +37,6 @@ export class LoginComponent implements OnInit {
     })
       .subscribe(({data, loading}) => {
           this.user = data.getUserByUsernameAndPassword;
-          console.log('User: ', this.user);
           this.loading = loading;
           localStorage.setItem('isValidUser', 'true');
           this.router.navigate(['/hotels']);

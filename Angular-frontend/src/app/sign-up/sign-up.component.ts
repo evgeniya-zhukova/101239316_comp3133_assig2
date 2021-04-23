@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Apollo, gql } from 'apollo-angular';
+import { Router } from '@angular/router';
 import { User } from '../models/user';
 
 @Component({
@@ -19,7 +20,7 @@ export class SignUpComponent implements OnInit {
     email: ''
   };
 
-  constructor(private apollo: Apollo) { }
+  constructor(private router: Router, private apollo: Apollo) { }
 
   ngOnInit(): void {
     this.apollo
@@ -71,6 +72,7 @@ export class SignUpComponent implements OnInit {
       newUsers.unshift(data['addUser']);
       this.users = newUsers;
       alert('You are successfully registered!');
+      this.router.navigate(['/login']);
     });
   }
 }

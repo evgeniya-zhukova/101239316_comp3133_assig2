@@ -34,6 +34,9 @@ exports.resolvers = {
         getHotelByID: async (parent, args) => {
             return await Hotel.findById(args.id);
         },
+        getHotelByHotelID: async (parent, args) => {
+            return await Hotel.find({"hotel_id" : args.hotel_id});
+        },
         getHotelByName: async (parent, args) => {
             return await Hotel.find({"hotel_name" : args.hotel_name});
         },

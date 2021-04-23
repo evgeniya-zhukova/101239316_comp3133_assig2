@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Apollo, gql } from 'apollo-angular';
 import { Hotel } from '../models/hotel';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-hotels',
@@ -10,12 +11,13 @@ import { Hotel } from '../models/hotel';
 
 export class HotelsComponent implements OnInit {
   hotels: Hotel[];
+  hotel_id = '';
   selectedHotelName = '';
   selectedHotelCity = '';
   loading = true;
   error: any;
 
-  constructor(private apollo: Apollo) { }
+  constructor(private router: Router, private apollo: Apollo) { }
 
   ngOnInit(): void {
     this.apollo
@@ -52,12 +54,14 @@ export class HotelsComponent implements OnInit {
       query: gql`
         query ($hotel_name:String!){
           getHotelByName(hotel_name:$hotel_name){
-            id,
-            hotel_id,
-            hotel_name,
-            street,
-            city,
-            price
+                id,
+                hotel_id,
+                hotel_name,
+                street,
+                city,
+                postal_code,
+                price,
+                email
           }
         }`,
       variables: {
@@ -80,12 +84,14 @@ export class HotelsComponent implements OnInit {
       query: gql`
         query ($city:String!){
           getHotelByCity(city:$city){
-            id,
-            hotel_id,
-            hotel_name,
-            street,
-            city,
-            price
+                id,
+                hotel_id,
+                hotel_name,
+                street,
+                city,
+                postal_code,
+                price,
+                email
           }
         }`,
       variables: {
@@ -95,6 +101,37 @@ export class HotelsComponent implements OnInit {
       .subscribe(({data, loading}) => {
           this.hotels = data.getHotelByCity;
           this.loading = loading;
+        },
+        error => {
+          this.loading = false;
+          this.error = error;
+        }
+      );
+  }
+
+  addBooking(): void{
+    this.apollo.query<any>({
+      query: gql`
+        query ($hotel_id: String!){
+          getHotelByHotelID(hotel_id:$hotel_id){
+                id,
+                hotel_id,
+                hotel_name,
+                street,
+                city,
+                postal_code,
+                price,
+                email
+          }
+        }`,
+      variables: {
+        hotel_id: this.hotel_id,
+      }
+    })
+      .subscribe(({data, loading}) => {
+          this.hotels = data.getHotelByHotelID;
+          this.loading = loading;
+          this.router.navigate(['/bookings']);
         },
         error => {
           this.loading = false;
