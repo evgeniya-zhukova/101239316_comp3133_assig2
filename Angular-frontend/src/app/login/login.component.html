@@ -1,9 +1,9 @@
 <div class="card">
   <div class="card-body">
-    <div class="col-md-10">
-  <h2>Login</h2>
+    <div class="row justify-content-center">
   <div>
     <form class="card-body">
+      <h2>Login</h2><br>
       <div class="form-group col-md-6">
         <label for="username">Username: </label>
         <input type="text" id="username" name="username" placeholder="Username">
@@ -12,10 +12,11 @@
         <label for="password">Password: </label>
         <input type="password" id="password" name="password" placeholder="Password">
       </div>
-      <input type="submit" value="Login">
+      <input class="btn btn-success" onClick={this.login} type="submit" value="Login">
     </form>
     <a routerLink="/sign-up" routerLinkActive="active">Create an account</a>
   </div>
 </div>
 </div>
 </div>
+
