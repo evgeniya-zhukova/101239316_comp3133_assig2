@@ -1,2 +1,7 @@
-# 101239316_comp3133_assig2
-Assignment - II, COMP 3133 – Full Stack Development II
+# Hotel booking app
+
+## Used Technologies:
+Angular, GraphQL, MongoDB
+
+## Description:
+The application is an individual project.
